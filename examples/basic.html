@@ -23,6 +23,10 @@
 		<h2>Buttons</h2>
 		<input id="buttons" type="text">
 
+		<h2>Show/Hide Progammatically</h2>
+		<input id="show" class="clockpicker" type="text">
+		<button id="show-clock">Show clock</button><button id="hide-clock">Hide clock</button><button id="toggle-clock">Toggle clock</button>
+
 		<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="../src/jquery-clockpicker.js"></script>
 		<script type="text/javascript">
@@ -43,6 +47,19 @@
 
 				$('#buttons').jqclockpicker({
 					autoClose: false,
+				});
+
+				// Show / Hide Programmatically
+				$(document).on('click', '#show-clock', function () {
+					$('#show').jqclockpicker('show');
+				});
+
+				$(document).on('click', '#hide-clock', function () {
+					$('#show').jqclockpicker('hide');
+				});
+
+				$(document).on('click', '#toggle-clock', function () {
+					$('#show').jqclockpicker('toggle');
 				});
 			});			
 		</script>
